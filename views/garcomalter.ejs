@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs'); %>
+<body>
+    <%- include('partials/navbar.ejs'); %>
+    <div class="container">
+       
+        <div class="card" id="formulario-margin">
+            
+            <div class="card-header">Alternado um garcom!</div>
+            <div class= "card-body">
+                <form method="get" action="/altergarcom">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Atual: <%-garcoms.nmgarcom%>" class="form-control" name="nmgarcom">
+                    <input type="hidden" name="idgarcom" value="<%-garcoms.idgarcom%>">
+                    <br>
+                    <button class="btn btn-dark">Adicionar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+<%- include('partials/footer.ejs');%>

@@ -1,0 +1,16 @@
+h1{
+    color:blue;
+}
+
+#formulario-margin{
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+#excluido{
+    margin-top: 5vh;
+}
+
+#center{
+    text-align: center;
+}

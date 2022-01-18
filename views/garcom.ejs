@@ -1,0 +1,50 @@
+<%- include('partials/header.ejs'); %>
+<body>
+    <%- include('partials/navbar.ejs'); %>
+
+    <div class="container">
+        <div class="card" id="formulario-margin">
+            
+            <div class="card-header">Adicionando um garcom!</div>
+            <div class= "card-body">
+                <form method="post" action="/newgarcom">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Nome" class="form-control" name="nmgarcom">
+                    <br>
+                    <button class="btn btn-dark">Adicionar</button>
+                </form>
+            </div> 
+        </div>
+
+        <table class="table">
+        
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Hash</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+    
+            <tbody>
+                <% garcoms.forEach(garcom =>{ %>
+            <tr>
+                <th><%-garcom.idgarcom %></th>
+                <td><%-garcom.nmgarcom%></td>
+                <td><%-garcom.idgarcommd5%></td>
+                <td><a href="http://localhost:3000/garcome/<%=garcom.idgarcom%>"><button class="btn btn-dark">edit</button></a></td>
+                <td><a href="http://localhost:3000/garcomd/<%=garcom.idgarcom%>"><button class="btn btn-danger">delete</button></a></td>
+            </tr>
+                <% }) %> 
+            </tbody>
+          </table>
+
+    </div>              
+
+
+
+
+</body>
+<%- include('partials/footer.ejs');%>
